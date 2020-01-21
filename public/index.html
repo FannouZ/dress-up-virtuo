@@ -2,23 +2,90 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with govirtuo.com</title>
+    <link rel='stylesheet' href='styles.css'/>
+    <style>
+      h1{
+        text-align: center;
+        font-weight: normal;
+        color: white;
+      }
+      body {
+        font-family:Raleway,calibri;
+        background-image: radial-gradient(circle,#7a777c, #3e3d3f, #201f21,#0c0c0c);
+      }
+      .intro{
+        text-align: center;
+        color:white;
+      }
+      legend {
+        font-size: 20px;
+        color:#f1dabf;
+      }
+      button {
+        background-color: #f1dabf;
+        border: none;
+        color:352f2c;
+        padding: 10px 20px;
+        transition-duration: 0.4s;
+        border-radius: 3px;
+      }
+      button:hover {
+        background-color:#635451;
+        color:white;
+      }
+      fieldset{
+        background-color:rgba(0,0,0,0.5);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        width:550px;
+        padding-bottom: 20px;
+        margin-left:500px;
+        color:white;
+        border-radius: 10px;
+        behavior: url(border-radius.htc);
+      }
+      input[type=text],input[type=date],input[type=number] {
+        border: 2px;
+        border-radius: 3px;
+        background-color:transparent;
+        color:white;
+        border: 0.5px solid white;
+      }
+      input[type=text]:focus,input[type=date]:focus,input[type=number]:focus {
+        background-color:rgba(0,0,0,0.5);
+        transition-duration: 0.4s;
+      }
+
+    </style>
   </head>
   <body>
-    <div id="car">
-      <input class="js-name" type="text" placeholder="Car name"/>
-      <input class="js-price-by-day" type="number" placeholder="Price by day"/>
-      <input class="js-price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="js-name" type="text" placeholder="Driver name"/>
-      <input class="js-begin" type="date" placeholder="Rental begin date"/>
-      <input class="js-end" type="date" placeholder="Rental end date"/>
-      <input class="js-distance" type="number" placeholder="Distance in km"/>
-      <input class="js-option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script src="virtuo.js"></script>
-    <script src="index.js"></script>
+    <h1>Car rental information form </h1><br>
+    <div class="intro">Please provide the information about your rental application. </div><br>
+    <fieldset>
+      <legend>Car details</legend><br>
+        <div id="car">
+          <input class="js-name" type="text" placeholder="Car name"/><br><br>
+          <input class="js-price-by-day" type="number" placeholder="Price by day"/>&emsp;
+          <input class="js-price-by-km" type="number" placeholder="Price by km"/>
+        </div>
+    </fieldset><br>
+    <fieldset>
+      <legend>Rental details</legend><br>
+        <div id="rental">
+          <input class="js-name" type="text" placeholder="Driver name"/><br><br>
+          Rental begin date :&emsp;
+          <input class="js-begin" type="date" placeholder="Rental begin date"/><br><br>
+          Rental end date :&emsp;
+          <input class="js-end" type="date" placeholder="Rental end date"/><br><br>
+          <input class="js-distance" type="number" placeholder="Distance in km"/>
+          <input class="js-option" type="checkbox" placeholder="Deductible option"/>
+        </div><br>
+    </fieldset><br>
+    <fieldset>
+      <legend>Pricing details</legend><br>
+      <button id="compute">Compute</button><br><br> 
+      <div id="actors"></div>
+      <script src="virtuo.js"></script>
+      <script src="index.js"></script>
+    </fieldset>
   </body>
 </html>
